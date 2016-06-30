@@ -27,7 +27,7 @@ echo "Updating PHP repository"
 echo "Installing PHP"
     apt-get install php5-common php5-dev php5-cli php5-fpm -y > /dev/null
     
-    echo "Installing PHP extensions"
+echo "Installing PHP extensions"
     apt-get install curl php5-curl php5-gd php5-mcrypt php5-mysql -y > /dev/null
 
 echo "Removing Default NGINX config"
@@ -35,7 +35,7 @@ echo "Removing Default NGINX config"
 	sudo rm /etc/nginx/sites-enabled/default
 
 echo "Creating NGINX config"
-	curl -s https://raw.githubusercontent.com/bloomagency/vagrant-provisioners/master/default >> /etc/nginx/sites-available/default
+	curl https://raw.githubusercontent.com/bloomagency/vagrant-provisioners/master/default --output /etc/nginx/sites-available/default
     ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/ 
     service nginx restart > /dev/null
 
