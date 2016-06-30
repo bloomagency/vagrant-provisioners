@@ -34,7 +34,7 @@ echo "Removing Default NGINX config"
 	sudo rm /etc/nginx/sites-available/default
 
 echo "Creating NGINX config"
-	curl -s https://raw.githubusercontent.com/bloomagency/vagrant-provisioners/master/default
+	curl -s https://raw.githubusercontent.com/bloomagency/vagrant-provisioners/master/default >> /etc/nginx/sites-available/default
     ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/ 
     service nginx restart > /dev/null
 
