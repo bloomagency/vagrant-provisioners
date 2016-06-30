@@ -1,4 +1,14 @@
 #!/usr/bin/env bash
+echo "############################################"
+echo "#                                          #"
+echo "#   This provisioner based on code from:   #"
+echo "#   Vagrantfile Explained: Setting Up      #"
+echo "#	  and Provisioning with Shell.           #"
+echo "#	   By George Fekete, Sitepoint.com       #"
+echo "#	                                         #"
+echo "#	      Bloom Developers thank you :)      #"
+echo "############################################"
+
 echo "Provisioning NGINX and PHP5..."
 
 sudo apt-get update -q
@@ -25,7 +35,7 @@ echo "Removing Default NGINX config"
 
 echo "Creating NGINX config"
     cp /var/www/_vagrant/Config/Nginx/default /etc/nginx/sites-available/nginx_vhost > /dev/null
-    ln -s /etc/nginx/sites-available/nginx_vhost /etc/nginx/sites-enabled/ 
+    ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/ 
     service nginx restart > /dev/null
 
 sudo service nginx restart
