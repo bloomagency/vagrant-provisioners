@@ -32,6 +32,7 @@ echo "Installing PHP"
 
 echo "Removing Default NGINX config"
 	sudo rm /etc/nginx/sites-available/default
+	sudo rm /etc/nginx/sites-enabled/default
 
 echo "Creating NGINX config"
 	curl -s https://raw.githubusercontent.com/bloomagency/vagrant-provisioners/master/default >> /etc/nginx/sites-available/default
